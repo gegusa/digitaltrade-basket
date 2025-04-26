@@ -13,4 +13,9 @@
         <PackageReference Include="Scalar.AspNetCore" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DigitalTrade.Basket.AppServices\DigitalTrade.Basket.AppServices.csproj" />
+      <ProjectReference Include="..\DigitalTrade.Basket.Entities\DigitalTrade.Basket.Entities.csproj" />
+    </ItemGroup>
+
 </Project>

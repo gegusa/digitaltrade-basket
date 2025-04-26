@@ -2,5 +2,7 @@
 
 public class AddItemToBasketRequest
 {
-    
+    public long ClientId { get; set; }
+
+    public long ProductId { get; set; }
 }
