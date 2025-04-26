@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTrade.Basket.Host", "DigitalTrade.Basket.Host\DigitalTrade.Basket.Host.csproj", "{3509F784-4B64-4CCE-9F57-0116F36D8589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTrade.Basket.AppServices", "DigitalTrade.Basket.AppServices\DigitalTrade.Basket.AppServices.csproj", "{2FC2C376-0565-4858-82E9-FD2629C8FF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTrade.Basket.Api.Contracts", "DigitalTrade.Basket.Api.Contracts\DigitalTrade.Basket.Api.Contracts.csproj", "{5DA0C461-28B9-415E-B557-FFAA2B8D42A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTrade.Basket.Migrations", "DigitalTrade.Basket.Migrations\DigitalTrade.Basket.Migrations.csproj", "{DE7A7AEB-423D-4266-81D6-87A3C64585D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalTrade.Basket.Entities", "DigitalTrade.Basket.Entities\DigitalTrade.Basket.Entities.csproj", "{82058FED-7081-40FC-B0CF-8A6545184BD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{F51CB1D7-D6AC-491E-8279-E1A78E4DA8B6}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+		Dockerfile-migration = Dockerfile-migration
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3509F784-4B64-4CCE-9F57-0116F36D8589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3509F784-4B64-4CCE-9F57-0116F36D8589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3509F784-4B64-4CCE-9F57-0116F36D8589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3509F784-4B64-4CCE-9F57-0116F36D8589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC2C376-0565-4858-82E9-FD2629C8FF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC2C376-0565-4858-82E9-FD2629C8FF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC2C376-0565-4858-82E9-FD2629C8FF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC2C376-0565-4858-82E9-FD2629C8FF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA0C461-28B9-415E-B557-FFAA2B8D42A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA0C461-28B9-415E-B557-FFAA2B8D42A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA0C461-28B9-415E-B557-FFAA2B8D42A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA0C461-28B9-415E-B557-FFAA2B8D42A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7A7AEB-423D-4266-81D6-87A3C64585D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7A7AEB-423D-4266-81D6-87A3C64585D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7A7AEB-423D-4266-81D6-87A3C64585D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7A7AEB-423D-4266-81D6-87A3C64585D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82058FED-7081-40FC-B0CF-8A6545184BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82058FED-7081-40FC-B0CF-8A6545184BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82058FED-7081-40FC-B0CF-8A6545184BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82058FED-7081-40FC-B0CF-8A6545184BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
