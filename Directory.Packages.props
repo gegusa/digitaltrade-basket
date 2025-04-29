@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="dbup-postgresql" Version="6.0.3" />
+    <PackageVersion Include="DigitalTrade.Catalog.Api.Contracts" Version="1.0.0" />
     <PackageVersion Include="KafkaFlow" Version="4.0.0-beta4" />
     <PackageVersion Include="KafkaFlow.LogHandler.Console" Version="4.0.0-beta4" />
     <PackageVersion Include="KafkaFlow.Microsoft.DependencyInjection" Version="4.0.0-beta4" />
