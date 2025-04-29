@@ -29,7 +29,7 @@ public class BasketHandler : IBasketHandler
         {
             ClientId = request.ClientId,
             Basket = basket,
-            TotalPrice = basket.Sum(i => i.PriceAtAdding)
+            TotalPrice = basket.Sum(i => i.PriceAtAdding * i.Quantity)
         };
 
         await _producers[Topics.BasketCheckoutRequestedProducerName].ProduceAsync(checkoutRequestedEvent, ct);

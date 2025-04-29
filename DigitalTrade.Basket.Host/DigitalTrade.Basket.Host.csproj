@@ -7,8 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="KafkaFlow" />
+        <PackageReference Include="KafkaFlow.LogHandler.Console" />
         <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
         <PackageReference Include="Scalar.AspNetCore" />
         
     </ItemGroup>

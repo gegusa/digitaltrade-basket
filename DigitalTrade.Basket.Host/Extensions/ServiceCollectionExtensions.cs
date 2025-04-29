@@ -20,11 +20,6 @@ public static class ServiceCollectionExtensions
             throw new ArgumentException("kafkaOptions.Servers.Length == 0");
         }
 
-        if (kafkaOptions.ConsumerGroup is null)
-        {
-            throw new ArgumentNullException(kafkaOptions.ConsumerGroup);
-        }
-
         return services.AddKafka(kafka => kafka
             .UseConsoleLog()
             .AddCluster(cluster => cluster

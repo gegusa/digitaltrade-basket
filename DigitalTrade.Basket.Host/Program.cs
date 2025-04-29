@@ -26,7 +26,6 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
-
-app.MapGet("/", () => "Hello World!");
+app.MapControllers();
 
 app.Run();

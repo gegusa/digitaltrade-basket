@@ -45,9 +45,11 @@ public class BasketController : ControllerBase
     [HttpGet(BasketWebRoutes.GetBasket)]
     public Task<GetBasketResponse> GetBasket(long clientId, CancellationToken ct)
     {
-        return _basketHandler.GetBasket(new GetBasketRequest
+        var response = _basketHandler.GetBasket(new GetBasketRequest
         {
             ClientId = clientId
         }, ct);
+
+        return response;
     }
 }
