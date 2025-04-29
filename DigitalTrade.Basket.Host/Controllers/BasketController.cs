@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DigitalTrade.Basket.Host.Controllers;
 
-[Authorize]
 [ApiController]
 [Route(BasketWebRoutes.BasePath)]
 public class BasketController : ControllerBase

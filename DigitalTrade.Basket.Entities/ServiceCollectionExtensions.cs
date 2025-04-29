@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services, nameof(services));
 
-        services.AddSingleton<IBasketRepository, BasketRepository>();
+        services.AddScoped<IBasketRepository, BasketRepository>();
 
         var dbConfig = configuration.GetConnectionString("DefaultConnection")!;
 

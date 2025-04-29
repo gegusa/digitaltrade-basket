@@ -7,11 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity" />
+        <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+        <PackageReference Include="KafkaFlow" />
+        <PackageReference Include="KafkaFlow.LogHandler.Console" />
+        <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" />
+        <PackageReference Include="KafkaFlow.Serializer.JsonCore" />
         <PackageReference Include="Microsoft.Extensions.Configuration" />
         <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿using DigitalTrade.Basket.Api.Contracts.Dto;
 
-namespace DigitalTrade.Basket.Api.Contracts.Kafka;
+namespace DigitalTrade.Basket.Api.Contracts.Kafka.Events;
 
 public class BasketCheckoutRequestedEvent
 {

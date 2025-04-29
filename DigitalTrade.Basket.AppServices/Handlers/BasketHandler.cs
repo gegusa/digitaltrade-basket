@@ -1,18 +1,22 @@
 ﻿using DigitalTrade.Basket.Api.Contracts.Kafka;
+using DigitalTrade.Basket.Api.Contracts.Kafka.Events;
 using DigitalTrade.Basket.Api.Contracts.Request;
 using DigitalTrade.Basket.Api.Contracts.Response;
 using DigitalTrade.Basket.Entities.Entities;
 using DigitalTrade.Basket.Entities.Repositories;
+using KafkaFlow.Producers;
 
 namespace DigitalTrade.Basket.AppServices.Handlers;
 
 public class BasketHandler : IBasketHandler
 {
     private readonly IBasketRepository _basketRepository;
+    private readonly IProducerAccessor _producers;
 
-    public BasketHandler(IBasketRepository basketRepository)
+    public BasketHandler(IBasketRepository basketRepository, IProducerAccessor producers)
     {
         _basketRepository = basketRepository;
+        _producers = producers;
     }
 
     public async Task CheckoutBasket(CheckoutBasketRequest request, CancellationToken ct)
@@ -27,6 +31,8 @@ public class BasketHandler : IBasketHandler
             Basket = basket,
             TotalPrice = basket.Sum(i => i.PriceAtAdding)
         };
+
+        await _producers[Topics.BasketCheckoutRequestedProducerName].ProduceAsync(checkoutRequestedEvent, ct);
     }
 
     public async Task<AddItemToBasketResponse> AddItemToBasket(AddItemToBasketRequest request, CancellationToken ct)

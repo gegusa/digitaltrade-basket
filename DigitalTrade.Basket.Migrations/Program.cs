@@ -8,7 +8,7 @@ IConfiguration configuration = new ConfigurationBuilder()
     
 var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-// EnsureDatabase.For.PostgresqlDatabase(connectionString);
+EnsureDatabase.For.PostgresqlDatabase(connectionString);
 
 var result =
     DeployChanges.To
