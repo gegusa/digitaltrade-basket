@@ -2,8 +2,10 @@
 using DigitalTrade.Basket.AppServices.EventHandlers;
 using DigitalTrade.Basket.AppServices.Options;
 using DigitalTrade.Basket.Host.Middlewares;
+using DigitalTrade.Basket.Host.Options;
 using KafkaFlow;
 using KafkaFlow.Serializer;
+using Refit;
 
 namespace DigitalTrade.Basket.Host.Extensions;
 
@@ -11,6 +13,9 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddKafkaFlow(this IServiceCollection services, IConfiguration configuration)
     {
+        ArgumentNullException.ThrowIfNull(services, nameof(services));
+        ArgumentNullException.ThrowIfNull(configuration, nameof(configuration));
+
         var kafkaOptions = configuration
                                .GetSection(KafkaOptions.Section)
                                .Get<KafkaOptions>()
@@ -62,5 +67,43 @@ public static class ServiceCollectionExtensions
                 )
             )
         );
+    }
+
+    public static IHttpClientBuilder AddHttpClientFor<TApi, TOptions>(
+        IServiceCollection services, IConfiguration configuration)
+        where TApi : class
+        where TOptions : HttpApiOptions, new()
+    {
+        ArgumentNullException.ThrowIfNull(services, nameof(services));
+        ArgumentNullException.ThrowIfNull(configuration, nameof(configuration));
+
+        var options = services.ConfigureOptions<TOptions>(configuration);
+
+        return services
+            .AddRefitClient<TApi>()
+            .ConfigureHttpClient(c =>
+            {
+                c.BaseAddress = new Uri(options.BaseAddress);
+                c.Timeout = TimeSpan.Parse(options.Timeout);
+            });
+    }
+    
+    private static T ConfigureOptions<T>(this IServiceCollection services, IConfiguration configuration)
+        where T : class, new()
+    {
+        ArgumentNullException.ThrowIfNull(services, nameof(services));
+        ArgumentNullException.ThrowIfNull(configuration, nameof(configuration));
+
+        var optionsKey = typeof(T).Name;
+        var optionsValue = configuration.GetSection(optionsKey);
+        if (!optionsValue.Exists())
+            throw new InvalidOperationException($"The configuration section '{optionsKey}' does not exist.");
+
+        var options = new T();
+
+        optionsValue.Bind(options);
+        services.Configure<T>(optionsValue);
+
+        return options;
     }
 }

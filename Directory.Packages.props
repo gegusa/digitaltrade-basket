@@ -20,6 +20,8 @@
     <PackageVersion Include="Microsoft.Extensions.Options" Version="9.0.4" />
     <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
     <PackageVersion Include="Npgsql" Version="9.0.3" />
+    <PackageVersion Include="Refit" Version="8.0.0" />
+    <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0" />
     <PackageVersion Include="Scalar.AspNetCore" Version="2.1.1" />
     <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.7.0" />
   </ItemGroup>

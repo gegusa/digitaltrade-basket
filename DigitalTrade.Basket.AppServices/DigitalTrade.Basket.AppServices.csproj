@@ -11,6 +11,8 @@
         <PackageReference Include="KafkaFlow" />
         <PackageReference Include="Microsoft.Extensions.Configuration" />
         <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" />
+        <PackageReference Include="Refit" />
+        <PackageReference Include="Refit.HttpClientFactory" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,7 +1,10 @@
 using DigitalTrade.Basket.AppServices;
 using DigitalTrade.Basket.Entities;
 using DigitalTrade.Basket.Host.Extensions;
+using DigitalTrade.Basket.Host.Options;
+using DigitalTrade.Catalog.Api.Contracts.Catalog.Web;
 using Scalar.AspNetCore;
+using static DigitalTrade.Basket.Host.Extensions.ServiceCollectionExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -18,6 +21,8 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddHealthChecks();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
+
+AddHttpClientFor<ICatalogApi, CatalogHttpOptions>(builder.Services, configuration);
 
 var app = builder.Build();
 
