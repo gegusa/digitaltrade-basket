@@ -50,12 +50,12 @@ Basket Service отвечает за управление корзиной по�
 
 ```mermaid
 graph TD
-    subgraph
+    subgraph UI
         UI[Client / Frontend]
         UI --> |REST| BasketService
     end
 
-    subgraph
+    subgraph Interservice
         BasketService[[Basket Service]]
         BasketService -->|Kafka Event: CheckoutRequestedEvent| Kafka
         Kafka --> OrderingService
@@ -63,7 +63,7 @@ graph TD
         Kafka --> BasketService
     end
 
-    subgraph
+    subgraph Other_Services
         OrderingService[[Ordering Service]]
         CatalogService[[Catalog Service]]
     end
