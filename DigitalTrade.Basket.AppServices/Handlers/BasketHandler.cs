@@ -4,6 +4,7 @@ using DigitalTrade.Basket.Api.Contracts.Request;
 using DigitalTrade.Basket.Api.Contracts.Response;
 using DigitalTrade.Basket.Entities.Entities;
 using DigitalTrade.Basket.Entities.Repositories;
+using DigitalTrade.Catalog.Api.Contracts.Catalog.Web;
 using KafkaFlow.Producers;
 
 namespace DigitalTrade.Basket.AppServices.Handlers;
@@ -12,11 +13,14 @@ public class BasketHandler : IBasketHandler
 {
     private readonly IBasketRepository _basketRepository;
     private readonly IProducerAccessor _producers;
+    private readonly ICatalogApi _catalogApi;
 
-    public BasketHandler(IBasketRepository basketRepository, IProducerAccessor producers)
+    public BasketHandler(
+        IBasketRepository basketRepository, IProducerAccessor producers, ICatalogApi catalogApi)
     {
         _basketRepository = basketRepository;
         _producers = producers;
+        _catalogApi = catalogApi;
     }
 
     public async Task CheckoutBasket(CheckoutBasketRequest request, CancellationToken ct)
@@ -37,9 +41,17 @@ public class BasketHandler : IBasketHandler
 
     public async Task<AddItemToBasketResponse> AddItemToBasket(AddItemToBasketRequest request, CancellationToken ct)
     {
-        // здесь нужен синхронный запрос в Catalog
+        var itemInfo = await _catalogApi.GetProductById(request.ProductId, ct);
 
-        var entity = new ShoppingCartItemEntity();
+        var entity = new ShoppingCartItemEntity
+        {
+            AddedAt = DateTime.Now,
+            ClientId = request.ClientId,
+            Name = itemInfo.Product.Name,
+            PriceAtAdding = itemInfo.Product.Price,
+            Quantity = 1,
+            ProductId = request.ProductId
+        };
 
         var itemId = await _basketRepository.AddItemToClientBasket(entity, ct);
 
