@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-env
-LABEL maintainer="DigitalTrade"
+LABEL maintainer="kabanovrr"
 WORKDIR /src
 COPY . .
 RUN dotnet restore ./DigitalTrade.Basket.Migration/DigitalTrade.Basket.Migration.csproj && \

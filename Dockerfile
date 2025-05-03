@@ -1,4 +1,4 @@
-﻿FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS build-env
+﻿FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-env
 LABEL maintainer="kabanovrr"
 WORKDIR /src
 COPY . .
