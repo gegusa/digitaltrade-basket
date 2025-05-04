@@ -3,6 +3,7 @@ using DigitalTrade.Basket.Entities;
 using DigitalTrade.Basket.Host.Extensions;
 using DigitalTrade.Basket.Host.Options;
 using DigitalTrade.Catalog.Api.Contracts.Catalog.Web;
+using KafkaFlow;
 using Scalar.AspNetCore;
 using static DigitalTrade.Basket.Host.Extensions.ServiceCollectionExtensions;
 
@@ -25,12 +26,13 @@ builder.Services.AddOpenApi();
 AddHttpClientFor<ICatalogApi, CatalogHttpOptions>(builder.Services, configuration);
 
 var app = builder.Build();
-
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
 app.MapControllers();
+var kafkaBus = app.Services.CreateKafkaBus();
+await kafkaBus.StartAsync();
 
 app.Run();
