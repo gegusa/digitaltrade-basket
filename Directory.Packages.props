@@ -2,27 +2,40 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
+  <PropertyGroup Label="Common Versions">
+    <DbUpVersion>6.0.3</DbUpVersion>
+    <KafkaFlowVersion>4.0.0-beta4</KafkaFlowVersion>
+    <Linq2DbVersion>5.4.1</Linq2DbVersion>
+    <DotNetVersion>9.0.4</DotNetVersion>
+    <NpgsqlVersion>9.0.3</NpgsqlVersion>
+    <ScalarVersion>2.1.1</ScalarVersion>
+    <IdentityVersion>2.3.1</IdentityVersion>
+    <IdentityModelVersion>8.7.0</IdentityModelVersion>
+  </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="dbup-postgresql" Version="6.0.3" />
+    <PackageVersion Include="dbup-postgresql" Version="$(DbUpVersion)" />
+    <PackageVersion Include="KafkaFlow" Version="$(KafkaFlowVersion)" />
+    <PackageVersion Include="KafkaFlow.LogHandler.Console" Version="$(KafkaFlowVersion)" />
+    <PackageVersion Include="KafkaFlow.Microsoft.DependencyInjection" Version="$(KafkaFlowVersion)" />
+    <PackageVersion Include="KafkaFlow.Serializer.JsonCore" Version="$(KafkaFlowVersion)" />
+    <PackageVersion Include="linq2db" Version="$(Linq2DbVersion)" />
+    <PackageVersion Include="linq2db.PostgreSQL" Version="$(Linq2DbVersion)" />
+    <PackageVersion Include="linq2db.AspNet" Version="$(Linq2DbVersion)" />
+    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity" Version="$(IdentityVersionVersion)" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Options" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Npgsql" Version="$(NpgsqlVersion)" />
+    <PackageVersion Include="Refit" Version="$(RefitVersion)" />
+    <PackageVersion Include="Refit.HttpClientFactory" Version="$(RefitVersion)" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="$(ScalarVersion)" />
+    <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="$(IdentityModelVersion)" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageVersion Include="DigitalTrade.Catalog.Api.Contracts" Version="1.0.0" />
-    <PackageVersion Include="KafkaFlow" Version="4.0.0-beta4" />
-    <PackageVersion Include="KafkaFlow.LogHandler.Console" Version="4.0.0-beta4" />
-    <PackageVersion Include="KafkaFlow.Microsoft.DependencyInjection" Version="4.0.0-beta4" />
-    <PackageVersion Include="KafkaFlow.Serializer.JsonCore" Version="4.0.0-beta4" />
-    <PackageVersion Include="linq2db" Version="5.4.1" />
-    <PackageVersion Include="linq2db.PostgreSQL" Version="5.4.1" />
-    <PackageVersion Include="linq2db.AspNet" Version="5.4.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
-    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
-    <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="9.0.4" />
-    <PackageVersion Include="Microsoft.Extensions.Options" Version="9.0.4" />
-    <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="9.0.4" />
-    <PackageVersion Include="Npgsql" Version="9.0.3" />
-    <PackageVersion Include="Refit" Version="8.0.0" />
-    <PackageVersion Include="Refit.HttpClientFactory" Version="8.0.0" />
-    <PackageVersion Include="Scalar.AspNetCore" Version="2.1.1" />
-    <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.7.0" />
   </ItemGroup>
 </Project>
