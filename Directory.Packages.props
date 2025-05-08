@@ -9,7 +9,7 @@
     <DotNetVersion>9.0.4</DotNetVersion>
     <NpgsqlVersion>9.0.3</NpgsqlVersion>
     <ScalarVersion>2.1.1</ScalarVersion>
-    <IdentityVersion>2.3.1</IdentityVersion>
+    <RefitVersion>8.0.0</RefitVersion>
     <IdentityModelVersion>8.7.0</IdentityModelVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -22,10 +22,10 @@
     <PackageVersion Include="linq2db.PostgreSQL" Version="$(Linq2DbVersion)" />
     <PackageVersion Include="linq2db.AspNet" Version="$(Linq2DbVersion)" />
     <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(DotNetVersion)" />
-    <PackageVersion Include="Microsoft.AspNetCore.Identity" Version="$(IdentityVersionVersion)" />
     <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(DotNetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Configuration" Version="$(DotNetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="$(DotNetVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(DotNetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(DotNetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Options" Version="$(DotNetVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="$(DotNetVersion)" />
