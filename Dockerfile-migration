@@ -7,4 +7,4 @@ RUN dotnet restore ./DigitalTrade.Basket.Migrations/DigitalTrade.Basket.Migratio
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /src
 COPY --from=build-env /src/out .
-ENTRYPOINT ["dotnet", "DigitalTrade.Basket.Migration.dll"]
+ENTRYPOINT ["dotnet", "DigitalTrade.Basket.Migrations.dll"]
