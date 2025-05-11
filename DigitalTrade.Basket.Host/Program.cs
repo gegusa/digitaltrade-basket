@@ -30,11 +30,10 @@ builder.Services.AddOpenApi();
 AddHttpClientFor<ICatalogApi, CatalogHttpOptions>(builder.Services, configuration);
 
 var app = builder.Build();
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-    app.MapScalarApiReference();
-}
+
+app.MapOpenApi();
+app.MapScalarApiReference();
+
 app.Map("/", () => "Hello from Basket!");
 app.MapControllers();
 var kafkaBus = app.Services.CreateKafkaBus();
