@@ -36,7 +36,10 @@ public class BasketHandler : IBasketHandler
             TotalPrice = basket.Sum(i => i.PriceAtAdding * i.Quantity)
         };
 
-        await _producers[Topics.BasketCheckoutRequestedProducerName].ProduceAsync(checkoutRequestedEvent, ct);
+        await _producers[Topics.BasketCheckoutRequestedProducerName].ProduceAsync(
+            Topics.BasketCheckoutRequestedName,
+            checkoutRequestedEvent.ClientId.ToString(),
+            checkoutRequestedEvent);
     }
 
     public async Task<AddItemToBasketResponse> AddItemToBasket(AddItemToBasketRequest request, CancellationToken ct)

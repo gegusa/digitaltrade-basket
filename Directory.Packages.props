@@ -4,7 +4,7 @@
   </PropertyGroup>
   <PropertyGroup Label="Common Versions">
     <DbUpVersion>6.0.3</DbUpVersion>
-    <KafkaFlowVersion>4.0.0-beta4</KafkaFlowVersion>
+    <KafkaFlowVersion>4.0.0</KafkaFlowVersion>
     <Linq2DbVersion>5.4.1</Linq2DbVersion>
     <DotNetVersion>9.0.4</DotNetVersion>
     <NpgsqlVersion>9.0.3</NpgsqlVersion>
